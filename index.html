@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crossword Adventures</title>
+<meta name="description" content="Crossword Adventures: 100 crossword puzzles for kids 8 and up that teach kids to solve, one level at a time. Coming soon on Amazon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Luckiest+Guy&display=swap">
+<style>
+  :root {
+    --blue: #1f6fcf; --blue-deep: #17589f; --yellow: #ffd23f; --ink: #1c2333;
+    --paper: #ffffff; --muted: #4c5568; --rule: #dfe5ef;
+  }
+  * { box-sizing: border-box }
+  body { margin: 0; font: 18px/1.6 "Atkinson Hyperlegible", Arial, sans-serif; color: var(--ink); background: var(--paper) }
+  header {
+    background: var(--blue);
+    background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: #fff; padding: 48px 16px 56px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto }
+  .hero { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: center }
+  h1 { font: 400 clamp(44px, 7vw, 72px)/1 "Luckiest Guy", sans-serif; margin: 0 0 12px; letter-spacing: .02em }
+  h1 span { color: var(--yellow); display: block }
+  .sub { font-size: 22px; font-weight: 700; margin: 0 0 20px }
+  .lead { font-size: 19px; max-width: 34ch; margin: 0 0 28px; opacity: .95 }
+  .badge { display: inline-block; background: var(--yellow); color: var(--ink); font-weight: 700;
+           padding: 10px 18px; border-radius: 999px; font-size: 17px }
+  .cover { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 12px 32px rgba(0,0,0,.35) }
+  main { padding: 48px 16px 24px }
+  h2 { font: 400 30px/1.1 "Luckiest Guy", sans-serif; color: var(--blue-deep); margin: 0 0 16px; letter-spacing: .02em }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px }
+  .card { border: 1px solid var(--rule); border-radius: 10px; padding: 20px }
+  .card b { display: block; font-size: 19px; margin-bottom: 4px }
+  .card p { margin: 0; color: var(--muted); font-size: 16.5px }
+  .soon { background: #f4f7fc; border-radius: 10px; padding: 24px; margin-bottom: 40px }
+  .soon p { margin: 0; color: var(--muted) }
+  footer { border-top: 1px solid var(--rule); padding: 20px 16px 32px; color: var(--muted); font-size: 15px }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 32px; text-align: center }
+    .lead { margin-left: auto; margin-right: auto }
+    .cover { max-width: 300px; display: block; margin: 0 auto }
+    .grid { grid-template-columns: 1fr }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+    <div>
+      <h1>Crossword <span>Adventures</span></h1>
+      <p class="sub">100 Puzzles for Kids 8 and Up</p>
+      <p class="lead">A crossword book that teaches kids to solve, one level at a time: from word banks and helper letters all the way to big Champion grids.</p>
+      <span class="badge">Coming soon on Amazon</span>
+    </div>
+    <img class="cover" src="cover.png" alt="Cover of Crossword Adventures: 100 Puzzles for Kids 8 and Up, by Xavier H. Wang" width="900" height="1182">
+  </div>
+</header>
+<main class="wrap">
+  <h2>What's inside</h2>
+  <div class="grid">
+    <div class="card"><b>Six levels</b><p>Start with small grids and a word bank, then take away one helper at a time until kids solve 13 by 13 grids on their own.</p></div>
+    <div class="card"><b>Real crosswords</b><p>Densely crossed grids, standard numbering and clear, kid-friendly clues, with a full answer key at the back.</p></div>
+    <div class="card"><b>Six certificates</b><p>A certificate to cut out and keep at each milestone, from the first 10 puzzles to all 100.</p></div>
+  </div>
+  <div class="soon">
+    <h2>Free printables</h2>
+    <p>Free sample puzzles and color certificates are on the way. Check back soon.</p>
+  </div>
+</main>
+<footer>
+  <div class="wrap">&copy; 2026 Xavier H. Wang. Crossword Adventures.</div>
+</footer>
+</body>
+</html>
