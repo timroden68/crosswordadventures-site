@@ -1,0 +1,30 @@
+/* Crossword Adventures site: shared styles (fonts: Atkinson Hyperlegible + Luckiest Guy, as in the book) */
+:root {
+  --blue: #1f6fcf; --blue-deep: #15599a; --yellow: #ffd23f; --ink: #1c2333;
+  --paper: #ffffff; --muted: #4c5568; --rule: #dfe5ef; --soft: #f4f7fc;
+}
+* { box-sizing: border-box }
+body { margin: 0; font: 18px/1.6 "Atkinson Hyperlegible", Arial, sans-serif; color: var(--ink); background: var(--paper) }
+a { color: var(--blue-deep) }
+.wrap { max-width: 980px; margin: 0 auto }
+.grid-bg {
+  background: var(--blue);
+  background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 32px 32px; color: #fff;
+}
+.display { font-family: "Luckiest Guy", sans-serif; font-weight: 400; letter-spacing: .02em }
+h2 { font: 400 30px/1.1 "Luckiest Guy", sans-serif; color: var(--blue-deep); margin: 0 0 12px; letter-spacing: .02em }
+.badge { display: inline-block; background: var(--yellow); color: var(--ink); font-weight: 700;
+         padding: 10px 18px; border-radius: 999px; font-size: 17px }
+.card { border: 1px solid var(--rule); border-radius: 10px; padding: 20px }
+.soon { background: var(--soft); border-radius: 10px; padding: 24px }
+.soon p { margin: 0; color: var(--muted) }
+footer { border-top: 1px solid var(--rule); padding: 20px 16px 32px; color: var(--muted); font-size: 15px }
+.btn { display: inline-block; font: 700 16px/1 "Atkinson Hyperlegible", Arial, sans-serif; border-radius: 8px;
+       padding: 11px 16px; border: 2px solid var(--blue-deep); cursor: pointer; text-decoration: none; text-align: center }
+.btn-main { background: var(--blue-deep); color: #fff }
+.btn-main:hover { background: var(--blue) ; border-color: var(--blue) }
+.btn-plain { background: #fff; color: var(--blue-deep) }
+.btn-plain:hover { background: var(--soft) }
+.btn:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px }

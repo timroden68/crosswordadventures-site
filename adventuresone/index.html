@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crossword Adventures: Certificates and Extras</title>
+<meta name="description" content="Free color certificates with your child's name, and extras for Crossword Adventures: 100 Puzzles for Kids 8 and Up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Luckiest+Guy&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+  header { padding: 28px 16px 36px }
+  .top { display: flex; align-items: center; gap: 24px }
+  .top img { width: 110px; height: auto; border-radius: 4px; box-shadow: 0 6px 18px rgba(0,0,0,.3) }
+  .home { color: #fff; opacity: .9; font-size: 16px; text-decoration: none }
+  .home:hover { text-decoration: underline }
+  header h1 { font: 400 clamp(32px, 5vw, 46px)/1.05 "Luckiest Guy", sans-serif; margin: 6px 0 6px; letter-spacing: .02em }
+  header p { margin: 0; font-size: 18px; opacity: .95 }
+  main { padding: 40px 16px 24px }
+  section { margin-bottom: 44px }
+  .lead { margin: 0 0 18px; color: var(--muted); max-width: 62ch }
+  .namebox { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; background: var(--soft);
+             border-radius: 10px; padding: 18px 20px; margin-bottom: 24px }
+  .namebox label { font-weight: 700 }
+  .namebox input { font: 22px "Atkinson Hyperlegible", Arial, sans-serif; padding: 10px 14px; border: 2px solid var(--rule);
+                   border-radius: 8px; flex: 1 1 260px; min-width: 0; color: var(--ink) }
+  .namebox small { flex-basis: 100%; color: var(--muted); font-size: 15px }
+  .certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px }
+  .cert { display: flex; flex-direction: column; gap: 10px }
+  .cert img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff }
+  .cert b { font-size: 19px; line-height: 1.25 }
+  .cert .when { color: var(--muted); font-size: 15px; margin-top: -8px }
+  .cert .btns { display: flex; flex-direction: column; gap: 8px; margin-top: auto }
+  .status { min-height: 1.4em; color: var(--muted); font-size: 15px; margin-top: 12px }
+  @media (max-width: 760px) {
+    .certs { grid-template-columns: 1fr 1fr }
+    .top img { width: 80px }
+  }
+  @media (max-width: 460px) { .certs { grid-template-columns: 1fr } }
+</style>
+</head>
+<body>
+<header class="grid-bg">
+  <div class="wrap">
+    <a class="home" href="/">&larr; crosswordadventures.com</a>
+    <div class="top" style="margin-top:14px">
+      <img src="/cover.png" alt="Cover of Crossword Adventures" width="900" height="1182">
+      <div>
+        <h1>Crossword Adventures</h1>
+        <p>100 Puzzles for Kids 8 and Up: certificates and extras</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="certs-h">
+    <h2 id="certs-h">Color certificates</h2>
+    <p class="lead">There are six certificates to earn in the book. Type a name, then download the certificate and print it in color. Or download a blank one and write the name by hand.</p>
+
+    <div class="namebox">
+      <label for="name">Solver's name</label>
+      <input id="name" type="text" maxlength="40" autocomplete="off" placeholder="Type a name">
+      <small>The name stays on this device. It's added to the certificate right here in your browser and isn't sent anywhere.</small>
+    </div>
+
+    <div class="certs" id="certs"></div>
+    <p class="status" id="status" role="status"></p>
+  </section>
+
+  <section class="soon">
+    <h2>Bonus puzzles</h2>
+    <p>Free extra puzzles are on the way. Check back soon.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Xavier H. Wang. Crossword Adventures. Certificate lettering in Luckiest Guy (SIL Open Font License).</div>
+</footer>
+
+<script src="/js/pdf-lib.min.js"></script>
+<script src="/js/fontkit.umd.min.js"></script>
+<script>
+(function () {
+  var BASE = "certificates/";
+  var NAME_COLOR = [0.082, 0.353, 0.604];   // the cover's deep blue
+  var certs = [], fontBytes = null;
+  var nameEl = document.getElementById("name"), statusEl = document.getElementById("status");
+  try { nameEl.value = localStorage.getItem("ca-name") || ""; } catch (e) {}
+  nameEl.addEventListener("input", function () {
+    try { localStorage.setItem("ca-name", nameEl.value); } catch (e) {}
+    render();
+  });
+
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+
+  function render() {
+    var nm = nameEl.value.trim();
+    document.getElementById("certs").innerHTML = certs.map(function (c, i) {
+      return '<div class="cert card">' +
+        '<img src="' + BASE + c.file.replace(/\.pdf$/, ".png") + '" alt="' + esc(c.title) + ' certificate" width="408" height="528" loading="lazy">' +
+        '<b>' + esc(c.title) + '</b>' +
+        '<div class="when">After puzzle ' + c.after_puzzle + '</div>' +
+        '<div class="btns">' +
+          (nm ? '<button class="btn btn-main" data-i="' + i + '">Download with name</button>' : '') +
+          '<a class="btn ' + (nm ? 'btn-plain' : 'btn-main') + '" href="' + BASE + c.file + '" download>Download blank</a>' +
+        '</div></div>';
+    }).join("");
+  }
+
+  document.getElementById("certs").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-i]");
+    if (b) makeNamed(certs[+b.dataset.i], nameEl.value.trim(), b);
+  });
+
+  function makeNamed(c, nm, btn) {
+    btn.disabled = true; statusEl.textContent = "Making your certificate…";
+    var pdfP = fetch(BASE + c.file).then(function (r) { return r.arrayBuffer(); });
+    var fontP = fontBytes ? Promise.resolve(fontBytes)
+      : fetch("/fonts/LuckiestGuy-Regular.ttf").then(function (r) { return r.arrayBuffer(); }).then(function (b) { fontBytes = b; return b; });
+    Promise.all([pdfP, fontP]).then(function (res) {
+      return PDFLib.PDFDocument.load(res[0]).then(function (doc) {
+        doc.registerFontkit(fontkit);
+        return doc.embedFont(res[1], { subset: true }).then(function (font) {
+          var page = doc.getPages()[0], L = c.name_line, maxW = (L.x1 - L.x0) - 16, size = 32;
+          while (size > 12 && font.widthOfTextAtSize(nm, size) > maxW) size -= 1;
+          var w = font.widthOfTextAtSize(nm, size);
+          page.drawText(nm, { x: (L.x0 + L.x1) / 2 - w / 2, y: L.y + 7, size: size, font: font,
+                              color: PDFLib.rgb(NAME_COLOR[0], NAME_COLOR[1], NAME_COLOR[2]) });
+          doc.setTitle(c.title + " certificate for " + nm);
+          return doc.save();
+        });
+      });
+    }).then(function (bytes) {
+      var url = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+      var a = document.createElement("a");
+      a.href = url; a.download = c.title + " - " + nm.replace(/[\\/:*?"<>|]/g, "") + ".pdf";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+      statusEl.textContent = "Done! Open the downloaded PDF to print it.";
+    }).catch(function () {
+      statusEl.textContent = "Sorry, that didn't work. Try the blank certificate instead, or try again.";
+    }).then(function () { btn.disabled = false; });
+  }
+
+  fetch(BASE + "certificates.json").then(function (r) { return r.json(); }).then(function (j) { certs = j; render(); })
+    .catch(function () { statusEl.textContent = "The certificates couldn't load. Please reload the page."; });
+})();
+</script>
+</body>
+</html>

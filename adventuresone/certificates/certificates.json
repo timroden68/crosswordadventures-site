@@ -1,0 +1,98 @@
+[
+  {
+    "number": 1,
+    "after_puzzle": 10,
+    "title": "Crossword Starter",
+    "level": 1,
+    "file": "1-crossword-starter.pdf",
+    "page_size": [
+      612.0,
+      792
+    ],
+    "name_line": {
+      "x0": 146.0,
+      "x1": 466.0,
+      "y": 342.0
+    }
+  },
+  {
+    "number": 2,
+    "after_puzzle": 25,
+    "title": "Solo Solver",
+    "level": 2,
+    "file": "2-solo-solver.pdf",
+    "page_size": [
+      612.0,
+      792
+    ],
+    "name_line": {
+      "x0": 146.0,
+      "x1": 466.0,
+      "y": 342.0
+    }
+  },
+  {
+    "number": 3,
+    "after_puzzle": 50,
+    "title": "Halfway Hero",
+    "level": 3,
+    "file": "3-halfway-hero.pdf",
+    "page_size": [
+      612.0,
+      792
+    ],
+    "name_line": {
+      "x0": 146.0,
+      "x1": 466.0,
+      "y": 342.0
+    }
+  },
+  {
+    "number": 4,
+    "after_puzzle": 75,
+    "title": "Big Grid Master",
+    "level": 4,
+    "file": "4-big-grid-master.pdf",
+    "page_size": [
+      612.0,
+      792
+    ],
+    "name_line": {
+      "x0": 146.0,
+      "x1": 466.0,
+      "y": 342.0
+    }
+  },
+  {
+    "number": 5,
+    "after_puzzle": 90,
+    "title": "Theme Detective",
+    "level": 5,
+    "file": "5-theme-detective.pdf",
+    "page_size": [
+      612.0,
+      792
+    ],
+    "name_line": {
+      "x0": 146.0,
+      "x1": 466.0,
+      "y": 342.0
+    }
+  },
+  {
+    "number": 6,
+    "after_puzzle": 100,
+    "title": "Crossword Champion",
+    "level": 6,
+    "file": "6-crossword-champion.pdf",
+    "page_size": [
+      612.0,
+      792
+    ],
+    "name_line": {
+      "x0": 146.0,
+      "x1": 466.0,
+      "y": 342.0
+    }
+  }
+]
