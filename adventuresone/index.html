@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crossword Adventures: Certificates and Extras</title>
-<meta name="description" content="Free color certificates with your child's name, and extras for Crossword Adventures: 100 Puzzles for Kids 8 and Up.">
+<meta name="description" content="Free color certificates with your child's name, and six free bonus puzzles for Crossword Adventures: 100 Puzzles for Kids 8 and Up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Luckiest+Guy&display=swap">
@@ -33,6 +33,9 @@
   .cert .when { color: var(--muted); font-size: 15px; margin-top: -8px }
   .cert .btns { display: flex; flex-direction: column; gap: 8px; margin-top: auto }
   .status { min-height: 1.4em; color: var(--muted); font-size: 15px; margin-top: 12px }
+  .bonus { display: flex; gap: 24px; align-items: center; flex-wrap: wrap }
+  .bonus img { width: 340px; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff }
+  .bonus div { flex: 1 1 260px }
   @media (max-width: 760px) {
     .certs { grid-template-columns: 1fr 1fr }
     .top img { width: 80px }
@@ -67,6 +70,17 @@
 
     <div class="certs" id="certs"></div>
     <p class="status" id="status" role="status"></p>
+  </section>
+
+  <section aria-labelledby="bonus-h">
+    <h2 id="bonus-h">Bonus puzzles</h2>
+    <div class="bonus card">
+      <img src="bonus-puzzles.png" alt="The first two pages of the bonus puzzles" width="866" height="550" loading="lazy">
+      <div>
+        <p class="lead">Six free puzzles to print, one from each level of the book, from Warm-Up to Champion. The answers are on the last page.</p>
+        <a class="btn btn-main" href="crossword-adventures-bonus-puzzles.pdf" download>Download the bonus puzzles (PDF)</a>
+      </div>
+    </div>
   </section>
 
   <section class="soon">
