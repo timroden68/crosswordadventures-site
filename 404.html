@@ -8,7 +8,8 @@
 // GitHub Pages addresses are case-sensitive and parents type the printed address by hand, so send common
 // variants of a book's address (AdventuresOne, adventures-one, adventures1, book1 ...) to the right page.
 (function () {
-  var BOOKS = { adventuresone: ["adventuresone", "adventures1", "crosswordadventuresone", "crosswordadventures1", "book1", "one"] };
+  var BOOKS = { adventuresone: ["adventuresone", "adventures1", "crosswordadventuresone", "crosswordadventures1", "book1", "one"],
+                "adventuresone-uk": ["adventuresoneuk", "adventures1uk", "adventuresuk", "adventureoneuk", "crosswordadventuresoneuk", "crosswordadventuresuk", "uk", "ukedition"] };
   var key = location.pathname.toLowerCase().replace(/index\.html?$/, "").replace(/[^a-z0-9]/g, "");
   for (var slug in BOOKS) {
     if (BOOKS[slug].indexOf(key) >= 0) { location.replace("/" + slug + "/"); return; }
@@ -22,7 +23,8 @@
 <main class="wrap" style="padding:48px 16px">
   <h2>Page not found</h2>
   <p>Looking for the certificates and extras for <b>Crossword Adventures</b>? They're at
-     <a href="/adventuresone/">crosswordadventures.com/adventuresone</a>.</p>
+     <a href="/adventuresone/">crosswordadventures.com/adventuresone</a>
+     (UK Edition: <a href="/adventuresone-uk/">crosswordadventures.com/adventuresone-uk</a>).</p>
   <p><a href="/">Go to the home page</a></p>
 </main>
 </body>
