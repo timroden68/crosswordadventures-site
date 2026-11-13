@@ -28,3 +28,7 @@ footer { border-top: 1px solid var(--rule); padding: 20px 16px 32px; color: var(
 .btn-plain { background: #fff; color: var(--blue-deep) }
 .btn-plain:hover { background: var(--soft) }
 .btn:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px }
+/* link to the other edition (US <-> UK), in the blue header */
+.edition { margin: 14px 0 0; font-size: 16px; opacity: .95 }
+.edition a { color: #fff; font-weight: 700 }
+.edition a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px }
